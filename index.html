@@ -4,17 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Income Tax Calculator in Bangladesh</title>
-    <style>
-        .hidden {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="/style.css">
 
 </head>
 <body>
+    <div class="calculator-container">
+        <h1>Income Tax Calculator BD</h1>
     <form id="taxForm">
-        <label for="totalIncome">Total Income(BDT):</label>
-        <input type="number" id="totalIncome" placeholder="Enter total income"><br><br>
+        <label for="monthlyIncome">Monthly Salary (BDT):</label>
+        <input type="number" id="monthlyIncome" placeholder="Enter monthly income" required><br><br>
 
         <label for="category">Category:</label>
         <select id="category">
@@ -35,15 +33,17 @@
         <button type="button" onclick="calculateTax()">Calculate Tax</button><br><br>
     </form>
 
-    <div id="results" class="hidden">
-        <h3>Results:</h3>
+    <div id="results" class="hidden result-section">
+        <h3>Tax Calculation Result</h3>
         <p>Tax-Free Income: <span id="taxFreeIncome">0</span> BDT</p>
         <p>Taxable Income: <span id="taxableIncome">0</span> BDT</p>
         <p>Calculated Tax: <span id="calculatedTax">0</span> BDT</p>
         <p>Rebate: <span id="rebate">0</span> BDT</p>
-        <h4><i><b>Total Tax Amount(BDT): <span id="netTax">0</span></b></i></h4>
-
+        <h4><i><b>Total Tax Yearly(BDT): <span id="netTaxYear">0</span></b></i></h4>
+        <h4><i><b>Total Tax Monthly(BDT): <span id="netTaxMonthly">0</span></b></i></h4>
     </div>
+
+</div>
     
     <script src="/script.js"></script>
 </body>

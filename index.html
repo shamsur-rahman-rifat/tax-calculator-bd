@@ -5,45 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Income Tax Calculator in Bangladesh</title>
     <link rel="stylesheet" href="/style.css">
-
 </head>
 <body>
     <div class="calculator-container">
         <h1>Income Tax Calculator BD</h1>
-    <form id="taxForm">
-        <label for="monthlyIncome">Monthly Salary (BDT):</label>
-        <input type="number" id="monthlyIncome" placeholder="Enter monthly income" required><br><br>
+        <form id="taxForm">
+            <div class="form-group">
+                <label for="monthlyIncome">Monthly Salary (BDT):</label>
+                <input type="number" id="monthlyIncome" placeholder="Enter monthly income" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="category">Category:</label>
+                <select id="category">
+                    <option value="350000">General Man</option>
+                    <option value="400000">Women</option>
+                    <option value="400000">65+ Citizen</option>
+                    <option value="475000">Physical/Mental Unfit</option>
+                    <option value="500000">Freedom Fighter</option>
+                    <option value="475000">Third Gender</option>
+                </select>
+            </div>
 
-        <label for="category">Category:</label>
-        <select id="category">
-            <option value="350000">General Man</option>
-            <option value="400000">Women</option>
-            <option value="400000">65+ Citizen</option>
-            <option value="475000">Physical/Mental Unfit</option>
-            <option value="500000">Freedom Fighter</option>
-            <option value="475000">Third Gender</option>
-        </select><br><br>
+            <div class="form-group">
+                <label for="shanchay">Shanchay Patra Invest (Max Rebate: 5,00,000 BDT):</label>
+                <input type="number" id="shanchay" name="shanchay" value="0">
+            </div>
+            
+            <div class="form-group">
+                <label for="dps">DPS Invest (Max Rebate: 1,20,000 BDT):</label>
+                <input type="number" id="dps" name="dps" value="0">
+            </div>
+            
+            <div class="form-group">
+                <label for="mutual-fund">Mutual Fund Invest:</label>
+                <input type="number" id="mutual-fund" name="mutual-fund" value="0">
+            </div>
 
-        <label for="investment" >Total Investment:</label>
-        <input type="number" id="investment" placeholder="Enter total investment"> <br><br>
+            <div class="form-group">
+                <label for="treasury-bond">Treasury Bond Invest:</label>
+                <input type="number" id="treasury-bond" name="treasury-bond" value="0">
+            </div>
 
-        <label for="advanceTax">Advance Tax(BDT):</label>
-        <input type="number" id="advanceTax" placeholder="Enter advance tax"><br><br>
+            <div class="form-group">
+                <label for="stock">Stock Invest:</label>
+                <input type="number" id="stock" name="stock" value="0">
+            </div>
 
-        <button type="button" onclick="calculateTax()">Calculate Tax</button><br><br>
-    </form>
+            <div class="form-group">
+                <label for="provident-employee">Provident Fund Invest (Employee's Contribution):</label>
+                <input type="number" id="provident-employee" name="provident-employee" value="0">
+            </div>
 
-    <div id="results" class="hidden result-section">
-        <h3>Tax Calculation Result</h3>
-        <p>Tax-Free Income: <span id="taxFreeIncome">0</span> BDT</p>
-        <p>Taxable Income: <span id="taxableIncome">0</span> BDT</p>
-        <p>Calculated Tax: <span id="calculatedTax">0</span> BDT</p>
-        <p>Rebate: <span id="rebate">0</span> BDT</p>
-        <h4><i><b>Total Tax Yearly(BDT): <span id="netTaxYear">0</span></b></i></h4>
-        <h4><i><b>Total Tax Monthly(BDT): <span id="netTaxMonthly">0</span></b></i></h4>
+            <div class="form-group">
+                <label for="provident-employer">Provident Fund Invest (Employer's Contribution):</label>
+                <input type="number" id="provident-employer" name="provident-employer" value="0">
+            </div>
+
+            <div class="form-group">
+                <label for="provident-interest">Provident Fund Invest (Net Interest Income):</label>
+                <input type="number" id="provident-interest" name="provident-interest" value="0">
+            </div>
+
+            <div class="form-group">
+                <label for="children">Number of Unfit Children (if applicable):</label>
+                <input type="number" id="children" name="children" value="0">
+            </div>
+
+            <div class="form-group">
+                <label for="advanceTax">Advance Tax(BDT):</label>
+                <input type="number" id="advanceTax" placeholder="Enter advance tax" value="0">
+            </div>
+            
+            <button type="button" onclick="calculateTax()">Calculate Tax</button>
+        </form>
+
+        <div id="results" class="hidden result-section">
+            <h3>Tax Calculation Result</h3>
+            <p>Tax-Free Income: <span id="taxFreeIncome">0</span> BDT</p>
+            <p>Taxable Income: <span id="taxableIncome">0</span> BDT</p>
+            <p>Calculated Tax: <span id="calculatedTax">0</span> BDT</p>
+            <p>Rebate: <span id="rebate">0</span> BDT</p>
+            <h4><i><b>Total Tax Yearly(BDT): <span id="netTaxYear" style="color: rgb(250, 80, 80);">0</span></b></i></h4>
+            <h4><i><b>Total Tax Monthly(BDT): <span id="netTaxMonthly" style="color: rgb(250, 80, 80)">0</span></b></i></h4>
+        </div>
     </div>
-
-</div>
     
     <script src="/script.js"></script>
 </body>

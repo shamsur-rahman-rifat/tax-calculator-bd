@@ -21,13 +21,13 @@ function calculateTax(){
     if (taxableIncome <= zeroTaxLimit) {
         calculatedTax = 0;
     } else if (taxableIncome <= zeroTaxLimit+100000) {
-        calculatedTax = (taxableIncome - (zeroTaxLimit+100000)) * 0.05;
+        calculatedTax = (taxableIncome - (zeroTaxLimit)) * 0.05;
     } else if (taxableIncome <= zeroTaxLimit+500000) {
-        calculatedTax = 5000 + (taxableIncome - (zeroTaxLimit+500000)) * 0.1;
+        calculatedTax = 5000 + (taxableIncome - (zeroTaxLimit+100000)) * 0.1;
     } else if (taxableIncome <= zeroTaxLimit+1000000) {
-        calculatedTax = 45000 + (taxableIncome - (zeroTaxLimit+1000000)) * 0.15;
+        calculatedTax = 45000 + (taxableIncome - (zeroTaxLimit+500000)) * 0.15;
     } else if (taxableIncome <= zeroTaxLimit+1500000) {
-        calculatedTax = 120000 + (taxableIncome - (zeroTaxLimit+1500000)) * 0.2;
+        calculatedTax = 120000 + (taxableIncome - (zeroTaxLimit+1000000)) * 0.2;
     } else if (taxableIncome > zeroTaxLimit+1500000) {
         calculatedTax = 220000 + (taxableIncome - (zeroTaxLimit+1500000)) * 0.25;
     }

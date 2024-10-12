@@ -1,3 +1,7 @@
+function formatNumberWithCommas(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 function calculateTax(){
 
     let monthlyIncome = parseFloat(document.getElementById('monthlyIncome').value);
@@ -51,12 +55,13 @@ function calculateTax(){
     let netTaxMonthly=netTaxYear/12
 
 
-    document.getElementById("taxFreeIncome").innerText = taxFreeIncome.toFixed();
-    document.getElementById('taxableIncome').innerText = taxableIncome.toFixed();
-    document.getElementById('calculatedTax').innerText = calculatedTax.toFixed();
-    document.getElementById('rebate').innerText = totalRebate.toFixed();
-    document.getElementById('netTaxYear').innerText = netTaxYear.toFixed();
-    document.getElementById('netTaxMonthly').innerText = netTaxMonthly.toFixed();
+    document.getElementById('taxFreeIncome').textContent = formatNumberWithCommas(taxFreeIncome);
+    document.getElementById('taxableIncome').textContent = formatNumberWithCommas(taxableIncome);
+    document.getElementById('zeroTaxLimit').textContent = formatNumberWithCommas(zeroTaxLimit);
+    document.getElementById('rebate').textContent = formatNumberWithCommas(totalRebate)
+    document.getElementById('netTaxYear').textContent = formatNumberWithCommas(netTaxYear);
+    document.getElementById('netTaxMonthly').textContent = formatNumberWithCommas(netTaxMonthly.toFixed()); // Limit to 2 decimal places
+
 
     document.getElementById("results").classList.remove("hidden");
 }
